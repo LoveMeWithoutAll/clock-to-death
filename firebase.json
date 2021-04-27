@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "clock-to-end",
     "public": "public",
     "ignore": [
       "firebase.json",
