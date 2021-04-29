@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "clock-to-end",
-    "public": "public",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
