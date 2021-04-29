@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <birth-input></birth-input>
-    <death-input></death-input>
-    <timer></timer>
-  </div>
+  <v-main>
+    <v-container>
+      <death-input></death-input>
+      <v-spacer></v-spacer>
+      <timer></timer>
+    </v-container>
+  </v-main>
 </template>
 
 <script lang="ts">
