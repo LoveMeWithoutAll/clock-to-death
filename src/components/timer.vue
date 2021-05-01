@@ -34,7 +34,7 @@ export default class Timer extends Vue {
     const end = DateTime.fromISO(this.death);
     return end
       .diff(this.now)
-      .toFormat("yy'년' MM'달' dd'일' hh'시간' mm'분' ss'초'");
+      .toFormat("hh'시간' mm'분' ss'초'");
   }
 }
 </script>
