@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-card-title>인생시계</v-card-title>
+    <v-card-title>to bed</v-card-title>
     <v-card-subtitle>남은 시간</v-card-subtitle>
     <v-card-text class="text-h1">{{ leftTime }}</v-card-text>
   </v-card>
@@ -14,8 +14,7 @@ import { DateTime } from "luxon";
 @Component({
   computed: {
     ...mapGetters({
-      birth: "getBirth",
-      death: "getDeath",
+      time: "getTime",
     }),
   },
 })
@@ -31,7 +30,7 @@ export default class Timer extends Vue {
   }
 
   get leftTime() {
-    const end = DateTime.fromISO(this.death);
+    const end = DateTime.fromISO(this.time);
     return end
       .diff(this.now)
       .toFormat("hh'시간' mm'분' ss'초'");
