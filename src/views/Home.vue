@@ -1,9 +1,14 @@
 <template>
   <v-main>
-    <v-container>
-      <sleep-input></sleep-input>
-      <v-spacer></v-spacer>
-      <timer></timer>
+    <v-container fluid>
+      <v-row>
+        <v-col>
+          <sleep-input></sleep-input>
+        </v-col>
+        <v-col>
+          <timer></timer>
+        </v-col>
+      </v-row>
     </v-container>
   </v-main>
 </template>

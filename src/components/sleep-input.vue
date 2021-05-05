@@ -1,18 +1,16 @@
 <template>
-  <v-row>
-    <v-card>
-      <v-card-title>잘 시간</v-card-title>
-      <v-card-text>
-        <v-time-picker
-          v-model="time"
-          @change="set"
-          format="24hr"
-          landscape
-          scrollable
-        ></v-time-picker>
-      </v-card-text>
-    </v-card>
-  </v-row>
+  <v-card>
+    <v-card-title>잘 시간</v-card-title>
+    <v-card-text>
+      <v-time-picker
+        v-model="time"
+        @change="set"
+        format="24hr"
+        landscape
+        scrollable
+      ></v-time-picker>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script lang="ts">

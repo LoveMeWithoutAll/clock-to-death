@@ -2,7 +2,7 @@
   <v-card>
     <v-card-title>to bed</v-card-title>
     <v-card-subtitle>남은 시간</v-card-subtitle>
-    <v-card-text class="text-h1">{{ leftTime }}</v-card-text>
+    <v-card-text class="text-h3">{{ leftTime }}</v-card-text>
   </v-card>
 </template>
 
