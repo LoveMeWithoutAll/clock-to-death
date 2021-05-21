@@ -1,20 +1,16 @@
 <template>
-  <v-card>
-    <v-card-title>잘 시간</v-card-title>
-    <v-card-text>
-      <v-time-picker
-        v-model="time"
-        @change="set"
-        format="24hr"
-        landscape
-        scrollable
-      ></v-time-picker>
-    </v-card-text>
+  <v-card v-click-outside="closeModal">
+    <v-time-picker
+      v-model="time"
+      @change="set"
+      format="24hr"
+      full-width
+    ></v-time-picker>
   </v-card>
 </template>
 
 <script lang="ts">
-import { Vue, Component } from "vue-property-decorator";
+import { Vue, Component, Emit } from "vue-property-decorator";
 import { mapMutations } from "vuex";
 
 @Component({
@@ -26,6 +22,12 @@ import { mapMutations } from "vuex";
 })
 export default class SleepInput extends Vue {
   time = "";
+
+  @Emit()
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  closeModal(): void {
+    console.log('in sleep input')
+  }
 }
 </script>
 
