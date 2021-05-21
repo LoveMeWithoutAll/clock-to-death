@@ -1,7 +1,5 @@
 <template>
-  <v-card>
-    <v-card-title>to bed</v-card-title>
-    <v-card-subtitle>남은 시간</v-card-subtitle>
+  <v-card flat>
     <v-card-text class="text-h3">{{ leftTime }}</v-card-text>
   </v-card>
 </template>
@@ -30,10 +28,9 @@ export default class Timer extends Vue {
   }
 
   get leftTime() {
-    const end = DateTime.fromISO(this.time);
-    return end
-      .diff(this.now)
-      .toFormat("hh'시간' mm'분' ss'초'");
+    let end = DateTime.fromISO(this.time);
+    if (end < this.now) end = end.plus({ days: 1 });
+    return end.diff(this.now).toFormat("hh':'mm':'ss''");
   }
 }
 </script>
