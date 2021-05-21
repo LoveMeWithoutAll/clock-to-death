@@ -1,13 +1,9 @@
 <template>
-  <v-main>
-    <v-container fluid>
-      <v-row>
-        <v-col>
-          <timer></timer>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-main>
+  <v-container fill-height>
+    <v-row class="justify-center">
+      <timer></timer>
+    </v-row>
+  </v-container>
 </template>
 
 <script lang="ts">

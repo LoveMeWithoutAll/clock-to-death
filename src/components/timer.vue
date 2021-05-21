@@ -1,6 +1,8 @@
 <template>
   <v-card flat>
-    <v-card-text class="text-h3">{{ leftTime }}</v-card-text>
+    <v-card-text class="font-weight-bold text-h2">
+      {{ leftTime }}
+    </v-card-text>
   </v-card>
 </template>
 
