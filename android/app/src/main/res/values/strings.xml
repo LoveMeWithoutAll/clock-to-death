@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MEMENTO_MORI</string>
+    <string name="title_activity_main">MEMENTO_MORI</string>
+    <string name="package_name">com.memento.mori.app</string>
+    <string name="custom_url_scheme">com.memento.mori.app</string>
+</resources>
