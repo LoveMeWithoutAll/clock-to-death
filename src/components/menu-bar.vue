@@ -37,13 +37,9 @@
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import SleepInput from "@/components/sleep-input.vue";
 import { mapMutations, mapGetters } from "vuex";
 
 @Component({
-  components: {
-    SleepInput,
-  },
   methods: {
     ...mapMutations({
       set: "setTime",
