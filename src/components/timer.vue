@@ -32,7 +32,12 @@ export default class Timer extends Vue {
   get leftTime() {
     let end = DateTime.fromISO(this.time);
     if (end < this.now) end = end.plus({ days: 1 });
-    return end.diff(this.now).toFormat("hh':'mm':'ss''");
+    const diff = end.diff(this.now);
+    if (diff.isValid) {
+      return diff.toFormat("hh':'mm':'ss''");
+    } else {
+      return "Set sleep time on menu bar!";
+    }
   }
 }
 </script>

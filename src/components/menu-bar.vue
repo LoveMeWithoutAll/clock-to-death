@@ -38,7 +38,7 @@
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import SleepInput from "@/components/sleep-input.vue";
-import { mapMutations } from "vuex";
+import { mapMutations, mapGetters } from "vuex";
 
 @Component({
   components: {
@@ -48,11 +48,18 @@ import { mapMutations } from "vuex";
     ...mapMutations({
       set: "setTime",
     }),
+    ...mapGetters({
+      getTime: "getTime",
+    }),
   },
 })
 export default class MenuBar extends Vue {
-  modal = false;
-  time = null;
+  getTime!: () => string;
+  modal: string | boolean = false;
+  time: string | null = null;
+  created(): void {
+    this.time = this.getTime();
+  }
 }
 </script>
 

@@ -9,15 +9,25 @@
 
 <script lang="ts">
 import Vue from "vue";
-import MenuBar from "@/components/menu-bar.vue"
+import MenuBar from "@/components/menu-bar.vue";
+import { Component } from "vue-property-decorator";
+import { mapMutations } from "vuex";
 
-export default Vue.extend({
-  name: "App",
+@Component({
   components: {
-    MenuBar
+    MenuBar,
   },
-  data: () => ({
-    //
-  }),
-});
+  methods: {
+    ...mapMutations({
+      setTime: "setTime",
+    }),
+  },
+})
+export default class App extends Vue {
+  setTime!: (time: string) => void;
+  mounted(): void {
+    const localStorageTime = localStorage.getItem("time");
+    if (localStorageTime) this.setTime(localStorageTime);
+  }
+}
 </script>
