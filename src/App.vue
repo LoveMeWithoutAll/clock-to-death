@@ -1,19 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <h1>Clock to sleep</h1>
-      </div>
-      <v-spacer></v-spacer>
-      <v-btn
-        href="https://github.com/LoveMeWithoutAll/clock-to-death"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
+    <menu-bar></menu-bar>
     <v-main>
       <router-view />
     </v-main>
@@ -22,12 +9,25 @@
 
 <script lang="ts">
 import Vue from "vue";
+import MenuBar from "@/components/menu-bar.vue";
+import { Component } from "vue-property-decorator";
+import { mapMutations } from "vuex";
 
-export default Vue.extend({
-  name: "App",
-
-  data: () => ({
-    //
-  }),
-});
+@Component({
+  components: {
+    MenuBar,
+  },
+  methods: {
+    ...mapMutations({
+      setTime: "setTime",
+    }),
+  },
+})
+export default class App extends Vue {
+  setTime!: (time: string) => void;
+  mounted(): void {
+    const localStorageTime = localStorage.getItem("time");
+    if (localStorageTime) this.setTime(localStorageTime);
+  }
+}
 </script>
