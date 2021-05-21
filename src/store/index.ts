@@ -28,6 +28,7 @@ export default new Vuex.Store({
       state.death = death;
     },
     setTime(state, time) {
+      localStorage.setItem("time", time);
       state.time = time;
     },
   },

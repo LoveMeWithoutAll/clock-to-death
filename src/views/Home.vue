@@ -1,26 +1,17 @@
 <template>
-  <v-main>
-    <v-container fluid>
-      <v-row>
-        <v-col>
-          <sleep-input></sleep-input>
-        </v-col>
-        <v-col>
-          <timer></timer>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-main>
+  <v-container fill-height>
+    <v-row class="justify-center">
+      <timer></timer>
+    </v-row>
+  </v-container>
 </template>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
 import Timer from "@/components/timer.vue";
-import SleepInput from "@/components/sleep-input.vue";
 
 @Component({
   components: {
-    SleepInput,
     Timer,
   },
 })
