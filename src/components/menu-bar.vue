@@ -1,8 +1,5 @@
 <template>
-  <v-app-bar app color="primary" dark>
-    <div class="d-flex align-center">
-      <h1>Clock to sleep</h1>
-    </div>
+  <v-app-bar app color="primary" dark class="pa-4">
     <v-spacer></v-spacer>
     <v-dialog
       ref="dialog"
